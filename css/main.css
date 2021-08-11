@@ -1,0 +1,73 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 35px;
+}
+
+* {
+    margin: 0;
+}
+
+.game__body {
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.cell {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.644);
+}
+
+.cell:nth-child(1), .cell:nth-child(2), .cell:nth-child(3) {
+    border-top: none;
+}
+
+.cell:nth-child(1), .cell:nth-child(4), .cell:nth-child(7) {
+    border-left: none;
+}
+
+.cell:nth-child(3), .cell:nth-child(6), .cell:nth-child(9) {
+    border-right: none;
+}
+
+.cell:nth-child(7), .cell:nth-child(8), .cell:nth-child(9) {
+    border-bottom: none;
+}
+
+.restart {
+    position: absolute;
+    width: 66px;
+    height: 66px;
+    right: 0;
+    top: 0;
+    background: url('../img/undo-solid.svg');
+}
+
+.hidden {
+    display: none;
+}
+
+.move {
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+@media (max-height: 760px) {
+    .container {
+        height: auto;
+    }
+}
