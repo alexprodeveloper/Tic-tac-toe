@@ -3,6 +3,7 @@ let gameOver = false;
 let restartBtn = document.querySelector('.restart');
 let cells = Array.from(document.querySelectorAll('.cell'));
 let move = document.querySelector('.move');
+
 function isFullfield(data) {
     for (let i = 0; i < data.length; i++) {
         if (data[i].textContent === '') {
@@ -80,7 +81,7 @@ function checkWinner() {
         cells[4].style.color = 'tomato';
         cells[7].style.color = 'tomato';
         if (timeForX === true) {
-            movemove.textContent = 'Нолики победили';
+            move.textContent = 'Нолики победили';
         } else {
             move.textContent = 'Крестики победили';
         }
@@ -122,6 +123,7 @@ function checkWinner() {
         }
     }
     if (gameOver === true || isFullfield(cells)) {
+        gameOver = true;
         restartBtn.classList.remove('hidden');
     }
 }
